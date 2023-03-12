@@ -12,6 +12,33 @@
     <div class="selector"><form>
         <label for="playerSelection">Choose your weapon:</label><br>
         <input type="text" id="playerSelection" name="playerSelection"><br>
+        <script>
+            document.getElementById("playerSelection").value = playerPick;
+            let normalisedPick = playerPick.toLowerCase();
+            let computerChoice;
+            let roundCounter;
+            function getComputerChoice(){
+                let random = Math.floor((Math.random() * 3));
+                if (random <= 1){
+                    computerChoice = "Rock"
+                }
+                else if (random > 1 && random <= 2){
+                    computerChoice = "Paper"
+                }
+                else{
+                    computerChoice = "Scissors"
+                }
+
+            }
+
+            function playRound(computerChoice, normalisedPick){
+                if(computerChoice = normalisedPick){
+                    alert("Oh no, it's a draw")
+                }
+                else if(computerChoice = "Rock" && )
+                    
+            }
+        </script>
     </form></div>
     <!--<div class="selections">
         <div class="playerChoice">
@@ -31,11 +58,5 @@
     input box to get player choice, remember to make it case insensitive
     function to play out the round
     game function including for loop to play through 5 rounds
-
-
-    pseudohtml
-    game picture
-    box to take input
-
 
 -->
