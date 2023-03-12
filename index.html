@@ -9,76 +9,13 @@
 </head>
 <body>
     <div class="title">Rock, Paper, Scissors</div>
-    <script>
-            function getPlayerChoice(){
-            let playerPick = prompt ("Choose your weapon");
-            toString(playerPick);
-            let normalisedPick = playerPick.toLowerCase();
-            if (normalisedPick != "rock" || normalisedPick != "scissors" || normalisedPick != "paper"){
-                alert ("Please choose either rock, paper or scissors");
-                getPlayerChoice();
-                return;
-            }
-                else{
-                    alert("you have chosen " + playerPick)
-                }
-        }
-            let computerChoice;
-            function getComputerChoice(){
-                let random = Math.floor((Math.random() * 3));
-                if (random <= 1){
-                    computerChoice = "Rock"
-                }
-                else if (random > 1 && random <= 2){
-                    computerChoice = "Paper"
-                }
-                else{
-                    computerChoice = "Scissors"
-                }
-
-            }
-
-            function playRound(cpu, player){
-                if(cpu === player){
-                    alert("Oh no, it's a draw");
-                    return;
-                    }
-                    else if((cpu === "Rock") && (player === "scissors")){
-                    alert("You lose, Rock beats Scissors");
-                    return;
-                    }
-                    else if((cpu === "Rock") && (player === "paper")){
-                    alert("You win, Paper beats Rock");
-                    return;
-                    }
-                    else if((cpu === "Paper") && (player === "scissors")){
-                    alert("You win, Scissors beats Paper");
-                    return;
-                    }
-                    else if((cpu === "Paper") && (player === "rock")){
-                    alert("You lose, Paper beats Rock");
-                    return;
-                    }
-                    else if((cpu === "Scissors") && (player === "paper")){
-                    alert("You lose, Scissors beats Paper");
-                    return;
-                    }
-                    else if((cpu === "Scissors") && (player === "rock")){
-                    alert("You win, Rock beats Scissors");
-                    return;
-                    }
-                }
-
-                let playerSelection = getPlayerChoice();
-                let computerSelection = getComputerChoice();
-                console.log(playRound(playerSelection, computerSelection));
-        </script>
+    <script src="myscripts.js"></script>
 </body>
 </html>
 
 <!--pseudocode
     function to get computer choice 
-    input box to get player choice, remember to make it case insensitive
+    input box to get playerPick choice, remember to make it case insensitive
     function to play out the round
     game function including for loop to play through 5 rounds
 

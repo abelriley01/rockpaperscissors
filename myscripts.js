@@ -1,6 +1,6 @@
 let playerInput = prompt ("Choose either rock, paper or scissors");
 let playerPick;
-    function getPlayerChoice(){
+    function getPlayerChoice(){  
     let playerPick = playerInput.toLowerCase();
     switch(playerPick){
         case "rock":
@@ -29,31 +29,31 @@ let playerPick;
         }
     }
 
-    function playRound(cpu, player){
-        if(cpu === player){
+    function playRound(computerSelection, playerPick){
+        if(computerSelection == playerPick){
             alert("Oh no, it's a draw");
             }
-            else if(cpu === "Rock" && player === "scissors"){
+            else if(computerSelection == "Rock" && playerPick == "scissors"){
             alert("You lose, Rock beats Scissors");
             return 0;
             }
-            else if(cpu === "Rock" && player === "paper"){
+            else if(computerSelection == "Rock" && playerPick == "paper"){
             alert("You win, Paper beats Rock");
             return 1;
             }
-            else if(cpu === "Paper" && player === "scissors"){
+            else if(computerSelection == "Paper" && playerPick == "scissors"){
             alert("You win, Scissors beats Paper");
             return 1;
             }
-            else if(cpu === "Paper" && player === "rock"){
+            else if(computerSelection == "Paper" && playerPick == "rock"){
             alert("You lose, Paper beats Rock");
             return 0;
             }
-            else if(cpu === "Scissors" && player === "paper"){
+            else if(computerSelection == "Scissors" && playerPick == "paper"){
             alert("You lose, Scissors beats Paper");
             return 0;
             }
-            else if(cpu === "Scissors" && player === "rock"){
+            else if(computerSelection === "Scissors" && playerPick === "rock"){
             alert("You win, Rock beats Scissors");
             return 1;
             }
