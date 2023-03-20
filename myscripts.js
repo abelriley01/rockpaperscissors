@@ -1,19 +1,24 @@
 let playerInput = prompt ("Choose either rock, paper or scissors");
 let playerPick;
-    function getPlayerChoice(){  
-    let playerPick = playerInput.toLowerCase();
-    switch(playerPick){
-        case "rock":
-            alert("you have picked Rock");
-            break;
-        case "paper":
-            alert("you have picked paper");
-            break;
-        case "scissors":
-            alert("you have picked scissors");
-            break;
-        default:
-            alert("please type either rock, paper or scissors")
+let computerChoice;
+getPlayerChoice();
+getComputerChoice();
+
+    
+   function getPlayerChoice(){  
+        let playerPick = playerInput.toLowerCase();
+        switch(playerPick){
+            case "rock":
+                alert("you have picked Rock");
+                break;
+            case "paper":
+                alert("you have picked Paper");
+                break;
+            case "scissors":
+                alert("you have picked Scissors");
+                break;
+            default:
+                alert("please type either rock, paper or scissors");
     }
 }
     function getComputerChoice(){
@@ -27,83 +32,45 @@ let playerPick;
         else{
             computerChoice = "Scissors"
         }
-    }
+    } 
 
-    function playRound(cpu, player){
-        switch(cpu){
+    function playRound(computerChoice, playerPick){
+        switch(computerChoice){
             case "Rock":
-                if (player = "rock"){
-                    alert ("Oh no, it's a draw");
+                if (playerPick = "rock"){
+                    return "Oh no, it's a draw";
 
                 }
-                else if (player = "paper"){
-                    alert ("You win, Paper beats Rock");
+                else if (playerPick = "paper"){
+                    return "You win, Paper beats Rock";
                 }
                 else{
-                    alert ("You lose, Rock beats Scissors");
+                    return "You lose, Rock beats Scissors";
                 }
                 break;
             case "Paper":
-                if (player = "rock"){
-                    alert ("You lose, Paper beats Rock");
+                if (playerPick = "rock"){
+                    return "You lose, Paper beats Rock";
                 }
-                else if (player = "paper"){
-                    alert ("Oh no, its a draw");
+                else if (playerPick = "paper"){
+                    return "Oh no, its a draw";
                 }
                 else{
-                    alert ("You win, Scissors beats Paper");
+                    return "You win, Scissors beats Paper";
                 }
                 break;
             case "Scissors":
-                if (player = "rock"){
-                    alert ("You win, Rock beats Scissors");
+                if (playerPick = "rock"){
+                    return "You win, Rock beats Scissors";
                 }
-                else if (player = "paper"){
-                    alert ("You lose, Scissors beats Paper");
+                else if (playerPick = "paper"){
+                    return "You lose, Scissors beats Paper";
                 }
                 else{
-                    alert ("Oh no, its a draw");
+                    return "Oh no, its a draw";
                 }
                 break;
         }
 
     }
-/*
-    function playRound(computerSelection, playerPick){
-        if(computerSelection == playerPick){
-            alert("Oh no, it's a draw");
-            }
-            else if(computerSelection == "Rock" && playerPick == "scissors"){
-            alert("You lose, Rock beats Scissors");
-            return 0;
-            }
-            else if(computerSelection == "Rock" && playerPick == "paper"){
-            alert("You win, Paper beats Rock");
-            return 1;
-            }
-            else if(computerSelection == "Paper" && playerPick == "scissors"){
-            alert("You win, Scissors beats Paper");
-            return 1;
-            }
-            else if(computerSelection == "Paper" && playerPick == "rock"){
-            alert("You lose, Paper beats Rock");
-            return 0;
-            }
-            else if(computerSelection == "Scissors" && playerPick == "paper"){
-            alert("You lose, Scissors beats Paper");
-            return 0;
-            }
-            else if(computerSelection === "Scissors" && playerPick === "rock"){
-            alert("You win, Rock beats Scissors");
-            return 1;
-            }
-            else{
-                alert("something went wrong")
-            }
-            }*/
-        let computerChoice;
-        getPlayerChoice();
-        let computerSelection = getComputerChoice();
-        console.log(computerChoice);
-        console.log(playerInput);
-        console.log(playRound(playerPick, computerSelection));
+    console.log(playRound(computerChoice, playerPick));
