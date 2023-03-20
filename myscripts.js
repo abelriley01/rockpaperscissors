@@ -29,6 +29,46 @@ let playerPick;
         }
     }
 
+    function playRound(cpu, player){
+        switch(cpu){
+            case "Rock":
+                if (player = "rock"){
+                    alert ("Oh no, it's a draw");
+
+                }
+                else if (player = "paper"){
+                    alert ("You win, Paper beats Rock");
+                }
+                else{
+                    alert ("You lose, Rock beats Scissors");
+                }
+                break;
+            case "Paper":
+                if (player = "rock"){
+                    alert ("You lose, Paper beats Rock");
+                }
+                else if (player = "paper"){
+                    alert ("Oh no, its a draw");
+                }
+                else{
+                    alert ("You win, Scissors beats Paper");
+                }
+                break;
+            case "Scissors":
+                if (player = "rock"){
+                    alert ("You win, Rock beats Scissors");
+                }
+                else if (player = "paper"){
+                    alert ("You lose, Scissors beats Paper");
+                }
+                else{
+                    alert ("Oh no, its a draw");
+                }
+                break;
+        }
+
+    }
+/*
     function playRound(computerSelection, playerPick){
         if(computerSelection == playerPick){
             alert("Oh no, it's a draw");
@@ -60,7 +100,7 @@ let playerPick;
             else{
                 alert("something went wrong")
             }
-            }
+            }*/
         let computerChoice;
         getPlayerChoice();
         let computerSelection = getComputerChoice();
