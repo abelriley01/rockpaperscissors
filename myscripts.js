@@ -1,6 +1,8 @@
 let playerChoice;
 let computerChoice;
 
+game();
+
     function getPlayerChoice(){
         let playerInput = prompt ("Choose either rock, paper or scissors");
         playerChoice = playerInput.toLowerCase();
@@ -36,7 +38,6 @@ let computerChoice;
                     console.log ("You lose, Rock beats Scissors");
                     return 2;
                 }
-                break;
             case "Paper":
                 if (playerChoice === "rock"){
                     console.log ("You lose, Paper beats Rock");
@@ -50,7 +51,7 @@ let computerChoice;
                     console.log ("You win, Scissors beats Paper");
                     return 1;
                 }
-                break;
+                
             case "Scissors":
                 if (playerChoice === "rock"){
                     console.log ("You win, Rock beats Scissors");
@@ -65,35 +66,34 @@ let computerChoice;
                     return 0;
                 }
             default: 
-            return 4;
+            break;
         }
 
     }
 
+    function scoreCheck(playerScore, cpuScore){
+        console.log("You have " + playerScore + " points and the cpu has " + cpuScore + " points.")
+    }   
+
     function game(){
-        getComputerChoice();
-        getPlayerChoice();
         let playerScore = 0;
         let cpuScore = 0;
         for (let i = 0; i < 5; i++){
-           if (playerScore === 5){
-                alert("you win!")
-              }
-              else if(cpuScore === 5){
-                alert("You lose.")
-              }
-        counter = playRound();
-        console.log(counter);
+            getComputerChoice();
+            getPlayerChoice();
+            counter = playRound(computerChoice, playerChoice);
             switch (counter){
                 case 1:
-                    ++playerScore;
+                    playerScore++;
+                    scoreCheck();
                     break;
                 case 2:
-                    ++cpuScore;
+                    cpuScore++;
+                    scoreCheck();
                     break;
                 default:
+                    scoreCheck();
                     break;
+              }
             }
-
         }
-    }
