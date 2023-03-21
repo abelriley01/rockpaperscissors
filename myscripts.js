@@ -1,17 +1,12 @@
-let playerInput = prompt ("Choose either rock, paper or scissors");
-let playerPick = playerInput.toLowerCase();
+let playerChoice;
 let computerChoice;
-let playerScore = 0;
-let cpuScore = 0;
-getComputerChoice();
-console.log (playerPick);
-console.log (computerChoice);
-console.log (playRound(computerChoice,playerPick));
-console.log (playerScore);
-console.log (cpuScore);
-game();
 
-    
+    function getPlayerChoice(){
+        let playerInput = prompt ("Choose either rock, paper or scissors");
+        playerChoice = playerInput.toLowerCase();
+    }
+
+
     function getComputerChoice(){
         let random =(Math.random() * 3);
         if (random <= 1){
@@ -25,65 +20,70 @@ game();
         }
     } 
 
-    function playRound(computerChoice, playerPick){
+    function playRound(computerChoice, playerChoice){
         switch(computerChoice){
             case "Rock":
-                if (playerPick = "rock"){
-                    //console.log ("Oh no, it's a draw");
+                if (playerChoice === "rock"){
+                    console.log ("Oh no, it's a draw");
                     return 0;
 
                 }
-                else if (playerPick = "paper"){
-                    //console.log ("You win, Paper beats Rock");
+                else if (playerChoice === "paper"){
+                    console.log ("You win, Paper beats Rock");
                     return 1;
                 }
                 else{
-                    //console.log ("You lose, Rock beats Scissors");
+                    console.log ("You lose, Rock beats Scissors");
                     return 2;
                 }
                 break;
             case "Paper":
-                if (playerPick = "rock"){
-                    //console.log ("You lose, Paper beats Rock");
+                if (playerChoice === "rock"){
+                    console.log ("You lose, Paper beats Rock");
                     return 2;
                 }
-                else if (playerPick = "paper"){
-                    //console.log ("Oh no, its a draw");
+                else if (playerChoice === "paper"){
+                    console.log ("Oh no, its a draw");
                     return 0;
                 }
                 else{
-                    //console.log ("You win, Scissors beats Paper");
+                    console.log ("You win, Scissors beats Paper");
                     return 1;
                 }
                 break;
             case "Scissors":
-                if (playerPick = "rock"){
-                    //console.log ("You win, Rock beats Scissors");
+                if (playerChoice === "rock"){
+                    console.log ("You win, Rock beats Scissors");
                     return 1;
                 }
-                else if (playerPick = "paper"){
-                    //console.log ("You lose, Scissors beats Paper");
+                else if (playerChoice === "paper"){
+                    console.log ("You lose, Scissors beats Paper");
                     return 2;
                 }
                 else{
-                    //console.log ("Oh no, its a draw");
+                    console.log ("Oh no, its a draw");
                     return 0;
                 }
-                break;
+            default: 
+            return 4;
         }
 
     }
 
     function game(){
+        getComputerChoice();
+        getPlayerChoice();
+        let playerScore = 0;
+        let cpuScore = 0;
         for (let i = 0; i < 5; i++){
-            if (playerScore = 5){
+           if (playerScore === 5){
                 alert("you win!")
               }
-              else if(cpuScore = 5){
+              else if(cpuScore === 5){
                 alert("You lose.")
               }
-            let counter = playRound(); 
-            console.log (counter);
+        counter = playRound();
+        console.log(counter);
             switch (counter){
                 case 1:
                     ++playerScore;
