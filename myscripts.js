@@ -85,15 +85,29 @@ game();
             switch (counter){
                 case 1:
                     playerScore++;
-                    scoreCheck();
+                    scoreCheck(playerScore, cpuScore);
                     break;
                 case 2:
                     cpuScore++;
-                    scoreCheck();
+                    scoreCheck(playerScore, cpuScore);
                     break;
                 default:
-                    scoreCheck();
+                    scoreCheck(playerScore, cpuScore);
                     break;
               }
+             if(i === 4){
+                if (cpuScore > playerScore){
+                    console.log("The computer wins.")
+                    break;
+                }
+                else if (playerScore > cpuScore ){
+                    console.log("Congratulations, you win!")
+                    break;
+                }
+                else{
+                    console.log("It's a tie, try again!")
+                    break;
+                }
+             } 
             }
         }
