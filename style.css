@@ -1,3 +1,6 @@
+body, .selector, .buttonArray, .user, .cpu, .selectionArray, .cpuSelection, .userSelection{
+    display: flex;
+}
 
 button{
     height: 120px;
@@ -9,27 +12,23 @@ button{
 
 .selector{
     margin: 30px;
-    display: flex;
     justify-content: space-evenly;
     flex-direction: column;
 }
 .buttonArray{
     max-width: 500px;
-    display: flex;
     font-size: 35px;
     padding-top: 40px;
 }
 
 
 .user, .cpu, .selectionArray{
-    display: flex;
     flex-direction: row;
     justify-content: space-around;
     
 }
 
 .cpuSelection, .userSelection{
-    display: flex;
     align-items: center;
 }
 
@@ -44,7 +43,6 @@ button{
     width: 150px;
 }
 body{
-    display: flex;
     flex-direction: column;
     align-items: center;
     background-color: grey;
