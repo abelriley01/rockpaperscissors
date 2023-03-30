@@ -10,8 +10,8 @@ button{
 .selector{
     margin: 30px;
     display: flex;
+    justify-content: space-evenly;
     flex-direction: column;
-    align-items: center;
 }
 .buttonArray{
     max-width: 500px;
@@ -20,6 +20,29 @@ button{
     padding-top: 40px;
 }
 
+
+.user, .cpu, .selectionArray{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.cpuSelection, .userSelection{
+    display: flex;
+    align-items: center;
+}
+
+.user, .cpu{
+    width: 400px;
+    border: solid black;
+    margin: 15px;
+    
+}
+
+.userPic, .cpuPic{
+    width: 150px;
+}
 body{
     display: flex;
     flex-direction: column;
