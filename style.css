@@ -1,7 +1,10 @@
-body, .selector, .buttonArray, .user, .cpu, .selectionArray, .cpuSelection, .userSelection{
+body, .selector, .scoreTracker, .buttonArray, .user, .cpu, .selectionArray, .cpuSelection, .userSelection{
     display: flex;
 }
 
+.selector, body{
+    flex-direction: column;
+}
 button{
     height: 120px;
     width: 120px;
@@ -9,12 +12,20 @@ button{
     padding: 10px;
 
 }
+.scoreTracker{
+    width: 600px;
+    height: 200px;
+    border: solid black;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
 
 .selector{
     margin: 30px;
     justify-content: space-evenly;
-    flex-direction: column;
 }
+
 .buttonArray{
     max-width: 500px;
     font-size: 35px;
@@ -28,7 +39,7 @@ button{
     
 }
 
-.cpuSelection, .userSelection{
+.cpuSelection, .userSelection, body{
     align-items: center;
 }
 
@@ -43,8 +54,6 @@ button{
     width: 150px;
 }
 body{
-    flex-direction: column;
-    align-items: center;
     background-color: grey;
     color: white;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif

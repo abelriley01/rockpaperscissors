@@ -1,7 +1,19 @@
 let playerChoice;
 let computerChoice;
 
-game();
+var i = 0;
+var txt = "This is an intro to a game that is ridiculously simple and needs no introduction, it's almost an insult to think you need to read this ";
+var speed = 50;
+
+typeWriter();
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("intro").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
 
     function getPlayerChoice(){
         let playerInput = prompt ("Choose either rock, paper or scissors");
@@ -71,7 +83,7 @@ game();
 
     }
 
-    function scoreCheck(playerScore, cpuScore){
+    /*function scoreCheck(playerScore, cpuScore){
         console.log("You have " + playerScore + " points and the cpu has " + cpuScore + " points.")
     }   
 
@@ -111,3 +123,4 @@ game();
              } 
             }
         }
+*/
