@@ -1,10 +1,13 @@
 let playerChoice;
 let computerChoice;
+let upOrDown;
 var i = 0;
 var txt = "This is an intro to a game that is ridiculously simple and needs no introduction, it's almost an insult to think you need to read this.... Seriously, why are you still reading?";
 var speed = 50;
 
+
 //typeWriter();
+scoreTracking();
 
 const paperClick = document.getElementById("Paper");
 paperClick.addEventListener("click", paperSelection);
@@ -80,8 +83,7 @@ function getComputerChoice(){
     } 
 
     function playRound(computerChoice, playerChoice){
-        switch(computerChoice){
-            case "Rock":
+        if (computerChoice === "Rock"){
                 if (playerChoice === "rock"){
                     document.getElementById("result").innerHTML = "Oh no, it's a tie"
                     document.getElementById("userSelection").innerHTML = "You have picked Rock"
@@ -89,83 +91,65 @@ function getComputerChoice(){
                 }
                 else if (playerChoice === "paper"){
                     document.getElementById("result").innerHTML = "You win, Paper beats Rock";
-                    
+                    document.getElementById("userSelection").innerHTML = "You have picked Paper"
+                    document.getElementById("cpuSelection").innerHTML = "The computer picked Rock"
+                    upOrDown = 2;
                 }
                 else{
                     document.getElementById("result").innerHTML = "You lose, Rock beats Scissors";
-                    
-                }
-            case "Paper":
+                    document.getElementById("userSelection").innerHTML = "You have picked Scissors";
+                    document.getElementById("cpuSelection").innerHTML = "The computer picked Rock";
+                    upOrDown = 1;
+                }}
+        if (computerChoice === "Paper"){
                 if (playerChoice === "rock"){
                     document.getElementById("result").innerHTML = "You lose, Paper beats Rock";
-                    
+                    document.getElementById("userSelection").innerHTML = "You have picked Rock";
+                    document.getElementById("cpuSelection").innerHTML = "The computer picked Paper";
+                    upOrDown = 1;
                 }
                 else if (playerChoice === "paper"){
-                    document.getElementById("result").innerHTML = "Oh no, its a draw";
-                    
+                    document.getElementById("result").innerHTML = "Oh no, its a tie";
+                    document.getElementById("userSelection").innerHTML = "You have picked Paper";
+                    document.getElementById("cpuSelection").innerHTML = "The computer picked Paper";
                 }
                 else{
                     document.getElementById("result").innerHTML = "You win, Scissors beats Paper";
-                    
-                }
-                
-            case "Scissors":
+                    document.getElementById("userSelection").innerHTML = "You have picked Scissors";
+                    document.getElementById("cpuSelection").innerHTML = "The computer picked Paper";
+                    upOrDown = 2;
+                }}            
+        if (computerChoice === "Scissors"){
                 if (playerChoice === "rock"){
                     document.getElementById("result").innerHTML ="You win, Rock beats Scissors";
-                    
+                    document.getElementById("userSelection").innerHTML = "You have picked Rock";
+                    document.getElementById("cpuSelection").innerHTML = "The computer picked Scissors";
+                    upOrDown = 2;
                 }
                 else if (playerChoice === "paper"){
                     document.getElementById("result").innerHTML ="You lose, Scissors beats Paper";
-                    
+                    document.getElementById("userSelection").innerHTML = "You have picked Paper";
+                    document.getElementById("cpuSelection").innerHTML = "The computer picked Scissors";
+                    upOrDown = 1;
                 }
                 else{
-                    document.getElementById("result").innerHTML ="Oh no, its a draw";
-                    
-                }
-            default: 
-            break;
+                    document.getElementById("result").innerHTML ="Oh no, its a tie";
+                    document.getElementById("userSelection").innerHTML = "You have picked Scissors";
+                    document.getElementById("cpuSelection").innerHTML = "The computer picked Scissors";
+                }}
         }
-
-    }
-
-    /*function scoreCheck(playerScore, cpuScore){
-        console.log("You have " + playerScore + " points and the cpu has " + cpuScore + " points.")
-    }   
-
-    function game(){
-        let playerScore = 0;
-        let cpuScore = 0;
-        for (let i = 0; i < 5; i++){
-            getComputerChoice();
-            getPlayerChoice();
-            counter = playRound(computerChoice, playerChoice);
-            switch (counter){
-                case 1:
-                    playerScore++;
-                    scoreCheck(playerScore, cpuScore);
-                    break;
-                case 2:
-                    cpuScore++;
-                    scoreCheck(playerScore, cpuScore);
-                    break;
-                default:
-                    scoreCheck(playerScore, cpuScore);
-                    break;
-              }
-             if(i === 4){
-                if (cpuScore > playerScore){
-                    console.log("The computer wins.")
-                    break;
-                }
-                else if (playerScore > cpuScore ){
-                    console.log("Congratulations, you win!")
-                    break;
-                }
-                else{
-                    console.log("It's a tie, try again!")
-                    break;
-                }
-             } 
-            }
+function scoreTracking(){
+    var cpuScore = 0;
+    var playerScore = 0;
+    document.getElementById("playerScoreTracker").innerHTML = `Your score is ${playerScore}`;
+    document.getElementById("cpuScoreTracker").innerHTML = `The computer's score is ${cpuScore}`;
+    if (playerScore < 5 && cpuScore < 5 ){
+        if (upOrDown = 1){
+            cpuScore += 1;
+            return;
         }
-*/
+        else if (upOrDown = 2){
+            playerScore += 1;
+            return;
+        }
+}}
