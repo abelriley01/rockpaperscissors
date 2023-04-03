@@ -6,6 +6,32 @@ var speed = 50;
 
 typeWriter();
 
+const paperClick = document.getElementById("Paper");
+paperClick.addEventListener("click", paperSelection);
+
+const rockClick = document.getElementById("Rock");
+rockClick.addEventListener("click", rockSelection);
+
+const scissorsClick = document.getElementById("Scissors");
+scissorsClick.addEventListener("click", scissorsSelection);
+
+function paperSelection(){
+    getComputerChoice();
+    playRound(computerChoice, "paper");
+
+}
+function rockSelection(){
+    getComputerChoice();
+    playRound(computerChoice, "rock");
+
+}
+
+function scissorsSelection(){
+    getComputerChoice();
+    playRound(computerChoice, "scissors");
+
+}
+
 function typeWriter() {
   if (i < txt.length) {
     document.getElementById("intro").innerHTML += txt.charAt(i);
