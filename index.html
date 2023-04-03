@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p class= "postIntro" id = "intro"> </p>
+    <span><p id = "intro"> </p>
+        </span>
     <div class = "buttonArray">
         <div class="selector">
         <button id = "Rock"><img src = "rps-imgs/hand-rock-regular.svg" alt = "Rock"></button>
@@ -26,28 +27,15 @@
     <div class = "selectionArray">
         <div class = "user">
             <img class=" userPic" src="rps-imgs/user-solid.svg" alt="User">
-            <div id="userSelection">you have chosen rock</div>
+            <div id="userSelection"></div>
         </div>
         <div class="cpu">
             <img class ="cpuPic" src="rps-imgs/laptop-solid.svg" alt="CPU">
-            <div id="cpuSelection"> the cpu has chosen rock</div>
+            <div id="cpuSelection"></div>
         </div>
     </div>
-    <div class = "scoreTracker">score</div>
+    <div id = "result"></div>
+    <div id = "scoreTracker"></div>
     <script src="myscripts.js"></script>
 </body>
 </html>
-
-
-<!-- 
-            title
-            small intro
-        rock paper scissors
-        computer selection and user selection
-        scoring and witty comment
-            end result
-        
-
-
-
--->

@@ -1,4 +1,4 @@
-body, .selector, .scoreTracker, .buttonArray, .user, .cpu, .selectionArray, .cpuSelection, .userSelection, #intro{
+body, span, .selector, .scoreTracker, .buttonArray, .user, .cpu, .selectionArray, .cpuSelection, .userSelection, #intro{
     display: flex;
 }
 
@@ -12,11 +12,25 @@ button{
     padding: 10px;
 
 }
+span{
+    width: 600px;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+}
+span > .title{
+    font-weight:bolder;
+    font-size: 55px;
+
+}
 
 #intro{
     width: 600px;
     height: 200px;
     flex-wrap: wrap;
+    font-size: 30px;
+    align-items: center;
+
     
 }
 .scoreTracker{

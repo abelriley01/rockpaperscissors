@@ -1,10 +1,10 @@
 let playerChoice;
 let computerChoice;
 var i = 0;
-var txt = "This is an intro to a game that is ridiculously simple and needs no introduction, it's almost an insult to think you need to read this ";
+var txt = "This is an intro to a game that is ridiculously simple and needs no introduction, it's almost an insult to think you need to read this.... Seriously, why are you still reading?";
 var speed = 50;
 
-typeWriter();
+//typeWriter();
 
 const paperClick = document.getElementById("Paper");
 paperClick.addEventListener("click", paperSelection);
@@ -31,13 +31,39 @@ function scissorsSelection(){
     playRound(computerChoice, "scissors");
 
 }
-
+//appears to "type" the intro message
 function typeWriter() {
   if (i < txt.length) {
     document.getElementById("intro").innerHTML += txt.charAt(i);
     i++;
     setTimeout(typeWriter, speed);
+    if (i===txt.length){
+        fadeout();
+        setTimeout(replaceForTitle, 3000);
+    } 
   }
+}
+//fades out the intro after it has finished typing
+function fadeout() {
+    var fadeTarget = document.getElementById("intro");
+    var fadeEffect = setInterval(function () {
+        if (!fadeTarget.style.opacity) {
+            fadeTarget.style.opacity = 1;
+        }
+        if (fadeTarget.style.opacity > 0) {
+            fadeTarget.style.opacity -= 0.1;
+        } else {
+            clearInterval(fadeEffect);
+        }
+    }, 200);
+}
+
+function replaceForTitle(){
+    const intro = document.getElementById("intro");
+    const titling = document.createElement('h1');
+    titling.innerHTML = "Rock, Paper, Scissors";
+    titling.classList.add("title");
+    intro.parentNode.replaceChild(titling, intro);
 }
 
 function getComputerChoice(){
@@ -57,44 +83,44 @@ function getComputerChoice(){
         switch(computerChoice){
             case "Rock":
                 if (playerChoice === "rock"){
-                    console.log ("Oh no, it's a draw");
-                    return 0;
-
+                    document.getElementById("result").innerHTML = "Oh no, it's a tie"
+                    document.getElementById("userSelection").innerHTML = "You have picked Rock"
+                    document.getElementById("cpuSelection").innerHTML = "The computer picked Rock"
                 }
                 else if (playerChoice === "paper"){
-                    console.log ("You win, Paper beats Rock");
-                    return 1;
+                    document.getElementById("result").innerHTML = "You win, Paper beats Rock";
+                    
                 }
                 else{
-                    console.log ("You lose, Rock beats Scissors");
-                    return 2;
+                    document.getElementById("result").innerHTML = "You lose, Rock beats Scissors";
+                    
                 }
             case "Paper":
                 if (playerChoice === "rock"){
-                    console.log ("You lose, Paper beats Rock");
-                    return 2;
+                    document.getElementById("result").innerHTML = "You lose, Paper beats Rock";
+                    
                 }
                 else if (playerChoice === "paper"){
-                    console.log ("Oh no, its a draw");
-                    return 0;
+                    document.getElementById("result").innerHTML = "Oh no, its a draw";
+                    
                 }
                 else{
-                    console.log ("You win, Scissors beats Paper");
-                    return 1;
+                    document.getElementById("result").innerHTML = "You win, Scissors beats Paper";
+                    
                 }
                 
             case "Scissors":
                 if (playerChoice === "rock"){
-                    console.log ("You win, Rock beats Scissors");
-                    return 1;
+                    document.getElementById("result").innerHTML ="You win, Rock beats Scissors";
+                    
                 }
                 else if (playerChoice === "paper"){
-                    console.log ("You lose, Scissors beats Paper");
-                    return 2;
+                    document.getElementById("result").innerHTML ="You lose, Scissors beats Paper";
+                    
                 }
                 else{
-                    console.log ("Oh no, its a draw");
-                    return 0;
+                    document.getElementById("result").innerHTML ="Oh no, its a draw";
+                    
                 }
             default: 
             break;
