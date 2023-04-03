@@ -8,33 +8,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script src="myscripts.js"></script>
     <p class= "postIntro" id = "intro"> </p>
     <div class = "buttonArray">
         <div class="selector">
-        <button class = "Rock"><img src = "rps-imgs/hand-rock-regular.svg" alt = "Rock"></button>
+        <button id = "Rock"><img src = "rps-imgs/hand-rock-regular.svg" alt = "Rock"></button>
         Rock
         </div>
         <div class = "selector">
-        <button class = "Paper"><img src="rps-imgs/hand-paper-regular.svg" alt= "Paper"></button>
+        <button id = "Paper"><img src="rps-imgs/hand-paper-regular.svg" alt= "Paper"></button>
         Paper
         </div>
         <div class="selector">
-        <button class = "Scissors"><img src= "rps-imgs/hand-scissors-regular.svg" alt="Scissors"></button>
+        <button id = "Scissors"><img src= "rps-imgs/hand-scissors-regular.svg" alt="Scissors"></button>
         Scissors
         </div>
     </div>
     <div class = "selectionArray">
         <div class = "user">
             <img class=" userPic" src="rps-imgs/user-solid.svg" alt="User">
-            <div class="userSelection">you have chosen rock</div>
+            <div id="userSelection">you have chosen rock</div>
         </div>
         <div class="cpu">
             <img class ="cpuPic" src="rps-imgs/laptop-solid.svg" alt="CPU">
-            <div class="cpuSelection"> the cpu has chosen rock</div>
+            <div id="cpuSelection"> the cpu has chosen rock</div>
         </div>
     </div>
     <div class = "scoreTracker">score</div>
+    <script src="myscripts.js"></script>
 </body>
 </html>
 

@@ -40,7 +40,7 @@ function typeWriter() {
   }
 }
 
-    function getComputerChoice(){
+function getComputerChoice(){
         let random =(Math.random() * 3);
         if (random <= 1){
             computerChoice = "Rock"
