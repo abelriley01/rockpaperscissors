@@ -1,6 +1,5 @@
 let playerChoice;
 let computerChoice;
-
 var i = 0;
 var txt = "This is an intro to a game that is ridiculously simple and needs no introduction, it's almost an insult to think you need to read this ";
 var speed = 50;
@@ -14,12 +13,6 @@ function typeWriter() {
     setTimeout(typeWriter, speed);
   }
 }
-
-    function getPlayerChoice(){
-        let playerInput = prompt ("Choose either rock, paper or scissors");
-        playerChoice = playerInput.toLowerCase();
-    }
-
 
     function getComputerChoice(){
         let random =(Math.random() * 3);

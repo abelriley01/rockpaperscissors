@@ -1,4 +1,4 @@
-body, .selector, .scoreTracker, .buttonArray, .user, .cpu, .selectionArray, .cpuSelection, .userSelection{
+body, .selector, .scoreTracker, .buttonArray, .user, .cpu, .selectionArray, .cpuSelection, .userSelection, #intro{
     display: flex;
 }
 
@@ -11,6 +11,13 @@ button{
     background-color: white;
     padding: 10px;
 
+}
+
+#intro{
+    width: 600px;
+    height: 200px;
+    flex-wrap: wrap;
+    
 }
 .scoreTracker{
     width: 600px;
