@@ -106,8 +106,8 @@ function playRound(playerChoice) {
   }
   
   function updateScoreboard() {
-    const playerScoreDiv = document.getElementById("playerScore");
-    const computerScoreDiv = document.getElementById("computerScore");
+    const playerScoreDiv = document.getElementById("playerScoreTracker");
+    const computerScoreDiv = document.getElementById("cpuScoreTracker");
   
     playerScoreDiv.textContent = `Player: ${playerScore}`;
     computerScoreDiv.textContent = `Computer: ${computerScore}`;
