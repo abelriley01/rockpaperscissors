@@ -5,6 +5,11 @@ body, span, .cpuInfo, .userInfo, #cpuSelection, #userSelection, .selector, .cpuS
 .selector, .cpuInfo, .userInfo, body{
     flex-direction: column;
 }
+span, #intro, .scoreTracker{
+    width: 600px;
+    height: 200px;
+}
+
 button{
     height: 120px;
     width: 120px;
@@ -12,44 +17,30 @@ button{
     padding: 10px;
 
 }
-.cpuInfo, .userInfo{
+.cpuInfo, .userInfo, .selector{
     justify-content: space-evenly;
 }
-span{
-    width: 600px;
-    height: 200px;
-    align-items: center;
-    justify-content: center;
-}
+
 span > .title{
     font-weight:bolder;
     font-size: 55px;
 
 }
-.userSelection, .playerSelection{
+.userSelection, .playerSelection, .user, .cpu, .selectionArray{
     justify-content:space-around;
 }
 #intro{
-    width: 600px;
-    height: 200px;
     flex-wrap: wrap;
     font-size: 30px;
-    align-items: center;
 
     
 }
-.scoreTracker{
-    width: 600px;
-    height: 200px;
+.scoreTracker, .user, .cpu{
     border: solid black;
-    align-items: center;
-    justify-content: center;
-    visibility: hidden;
 }
 
 .selector{
     margin: 30px;
-    justify-content: space-evenly;
 }
 
 .buttonArray{
@@ -61,18 +52,16 @@ span > .title{
 
 .user, .cpu, .selectionArray{
     flex-direction: row;
-    justify-content: space-around;
     
 }
 
-#cpuSelection, #userSelection, body{
+#cpuSelection, #userSelection, body, span, #intro, .scoreTracker{
     align-items: center;
     justify-content: center;
 }
 
 .user, .cpu{
     width: 400px;
-    border: solid black;
     margin: 15px;
     
 }
